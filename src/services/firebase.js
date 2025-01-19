@@ -12,14 +12,6 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
-console.log("API Key:", process.env.REACT_APP_FIREBASE_API_KEY);
-console.log("Auth Domain:", process.env.REACT_APP_FIREBASE_AUTH_DOMAIN);
-console.log("Project ID:", process.env.REACT_APP_FIREBASE_PROJECT_ID);
-console.log("Storage Bucket:", process.env.REACT_APP_FIREBASE_STORAGE_BUCKET);
-console.log("Messaging Sender ID:", process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID);
-console.log("App ID:", process.env.REACT_APP_FIREBASE_APP_ID);
-console.log("Measurement ID:", process.env.REACT_APP_FIREBASE_MEASUREMENT_ID);
-
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
