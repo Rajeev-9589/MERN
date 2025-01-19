@@ -14,8 +14,7 @@ function App() {
   };
 
   return (
-    <div className="flex p-2">
-      
+    <div className="">
       {isAuthenticated ? (
         <Dashboard userData={userData} isLoading={isLoading} setIsLoading={setIsLoading} /> // Pass userData to Dashboard
       ) : (

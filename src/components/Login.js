@@ -30,7 +30,9 @@ const Login = ({ onLogin ,setUserData}) => {
       console.error("Error logging in with Google: ", error);
     }
   };
-
+  
+  
+  
   return (
     <div className="min-h-screen flex justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600 w-screen">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full">

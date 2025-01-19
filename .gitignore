@@ -4,7 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
-
+expense-tracker-f1410-firebase-adminsdk-zxpgu-e5f7fced68.json
+.env
 # testing
 /coverage
 
