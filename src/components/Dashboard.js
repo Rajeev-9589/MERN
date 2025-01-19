@@ -30,7 +30,7 @@ function Dashboard({ userData, setIsAuthenticated,setIsLoading,isLoading }) {
     async function fetchData() {
       const idToken = await auth.currentUser.getIdToken(true);
       try {
-        setIsLoading(true)
+        setIsLoading(true);
         const response = await axios.get('http://localhost:5500/alltransaction', {
           headers: {
             Authorization: `Bearer ${idToken}`,
@@ -38,25 +38,26 @@ function Dashboard({ userData, setIsAuthenticated,setIsLoading,isLoading }) {
         });
         const transactions = response.data.transactions || {};
         const { expenses = [], addedMoney = [] } = transactions;
-
+  
         setExpenses(expenses);
         setAddedMoney(addedMoney);
-        setUserId(userData.uid)
-
+        setUserId(userData.uid);
+  
         // Calculate total income and expenses
         const totalIncome = addedMoney.reduce((sum, item) => sum + parseFloat(item.amount || 0), 0);
         const totalExpenses = expenses.reduce((sum, item) => sum + parseFloat(item.amount || 0), 0);
-
+  
         setTotalIncome(totalIncome);
         setTotalExpenses(totalExpenses);
         generateInsights(totalIncome, totalExpenses);
-setIsLoading(false)
+        setIsLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     }
     fetchData();
-  }, [refreshKey]); // Add refreshKey to the dependency array
+  }, [refreshKey, setIsLoading, userData.uid]);  // Added setIsLoading and userData.uid to the dependency array
+  
 
   const generateInsights = (income, expenses) => {
     if (income > expenses) {
