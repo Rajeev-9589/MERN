@@ -7,7 +7,7 @@ import Login from './components/Login';
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userData, setUserData] = useState(null);
-  const [isLoading, setIsLoading] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = (status) => {
     setIsAuthenticated(status);
