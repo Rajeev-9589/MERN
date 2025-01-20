@@ -52,6 +52,7 @@ function Dashboard({ userData, setIsAuthenticated,setIsLoading,isLoading }) {
         generateInsights(totalIncome, totalExpenses);
         setIsLoading(false);
       } catch (error) {
+        alert("Server Error, Please try again later!")
         console.error('Error fetching data:', error);
       }
     }
